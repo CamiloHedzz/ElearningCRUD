@@ -1,0 +1,33 @@
+{% extends 'inicio/base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="d-flex justify-content-center align-items-center">
+    <div class="ms-5 col-md-5">
+        <h1 class="mb-4">Haz Parte de Nosotros!</h1>
+        <p class="">
+            ¡Únete a nuestra comunidad hoy mismo y descubre todo lo que tenemos para ofrecer!
+            Al registrarte, tendrás acceso a funcionalidades personalizadas
+            y la oportunidad de revisar este CRUD. ¡Regístrate ahora para comenzar
+            a explorar y disfrutar de esta aplicación!
+        </p>
+    </div>
+
+    <div class="ms-5">
+        <form id="register-form" action="" method="post">
+            {% csrf_token %}            
+            <div class="card">
+                <div class="card-body">
+                    {{ form | crispy }}
+                    <a href={% url 'home' %} class="card-link">Inicio</a>
+                    <a href={% url 'login' %} class="card-link">Iniciar sesión</a>
+                    <button class="btn btn-sm btn-primary float-end" type="submit">Registrarse</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
