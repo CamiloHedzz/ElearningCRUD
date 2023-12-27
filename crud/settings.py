@@ -36,13 +36,13 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.contenttypes',
+    'localizaciones',
     'elearning',
     'usuarios',
-    'localizaciones',
     'cargos',
     'admins',
 ]
@@ -83,16 +83,6 @@ WSGI_APPLICATION = 'crud.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-'''
 
 DATABASES ={
  'default':{

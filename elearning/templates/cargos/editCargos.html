@@ -1,0 +1,19 @@
+{% extends 'inicio/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                    {{formCargo | crispy}}
+                </table>
+                <button class="btn btn-sm btn-primary" type="submit" >Guardar</button>
+            </form>
+        </div>  
+    </div>
+</div>
+
+{% endblock %}

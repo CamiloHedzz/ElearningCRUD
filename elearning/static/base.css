@@ -1,0 +1,29 @@
+/*     NAV STYLE      */
+
+#fondonav {
+    --bs-navbar-padding-y: 0;
+    --bs-navbar-brand-padding-y: 1.5rem;
+    --bs-navbar-brand-color: white;
+    --bs-navbar-brand-hover-color:white;
+}
+
+
+#nl{
+    --bs-nav-link-hover-color: white;
+    --bs-nav-link-color: black;
+}
+
+/*     lOG IN STYLE      */
+.card {
+    width: 30rem;
+}
+
+#titlefo{
+    color: black;
+}
+
+#div_id_username, #div_id_password{
+    color:#212529;
+}
+
+/*     FORM USER      */

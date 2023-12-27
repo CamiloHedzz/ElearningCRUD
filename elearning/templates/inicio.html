@@ -1,9 +1,13 @@
 {% extends 'inicio/base.html' %}
-{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'base.css' %}">
+
 {% load crispy_forms_tags %}
 
+{% block content %}
 <div class="d-flex flex-row">
-    <div class="p-2">
+    <div>
         <h5 >Crea a un nuevo usuario</h5>
         <form method="POST" action="{% url 'registerUser' %}">
             {% csrf_token %}
@@ -13,27 +17,10 @@
             <button class="btn btn-sm btn-primary" type="submit">Guardar</button>
         </form>
     </div>
-    <div class="p-2 ps-5 ms-5 pt-5 mt-3">
-        <form method="POST" action="{% url 'registerLoca' %}">
-            {% csrf_token %}
-            <table>
-                {{formLoca | crispy}}
-            </table>
-            <button class="btn btn-sm btn-primary" type="submit">Guardar</button>
-        </form>
-        <form method="POST" action="{% url 'registerCargo' %}">
-            {% csrf_token %}
-            <table>
-                {{formCargo | crispy}}
-            </table>
-            <button class="btn btn-sm btn-primary" type="submit" >Guardar</button>
-        </form>
-    </div>
-    
-        <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8 ps-5 pe-5">
-            <h6>Listado de Cursos</h6>
+        <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8 mx-auto">
+            <h6>Listado de Usuarios</h6>
             <div class="table-responsive py-2">
-                <table class="table table-striped table-dark">
+                <table class="table table-striped table-dark ">
                     <thead >
                         <tr>
                             <th>#</th>
@@ -55,7 +42,7 @@
                             <td>{{u.localizacion_id.localizacion}}</td>
                             <td>{{u.cargo_id.cargo}}</td>
                             <td><a href ="editUser/{{u.id}}" class="btn btn-info">Editar</a></td>
-                            <td><a href ="deleteUser/{{u.identificacion}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
+                            <td><a href ="deleteUser/{{u.id}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>

@@ -1,0 +1,49 @@
+{% extends 'inicio/base.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'base.css' %}">
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h5 class="text-center">Crea a un nuevo Localizacion</h5>
+<div class="col-md-10 ms-5 ps-5">
+    <div class="col-md-4">
+        <form method="POST" action="{% url 'registerLoca' %}">
+            {% csrf_token %}
+            <table>
+                {{formLocal | crispy}}
+            </table>
+            <button class="btn btn-sm btn-primary" type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <h6 class="mt-5">Listado de localizaciones</h6>
+    <div class="table-responsive py-2 ">
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Localización</th>
+                    <th>Activo</th>
+                    <th colspan="2">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for l in localizaciones %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ l.localizacion }}</td>
+                    <td>{{ l.active }}</td>
+                    <td><a href="editLoca/{{ l.id }}" class="btn btn-info">Editar</a></td>
+                    <td><a href="deleteLoca/{{ l.id }}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

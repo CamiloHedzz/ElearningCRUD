@@ -1,13 +1,15 @@
 {% extends 'inicio/base.html' %}
-{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+
 {% load crispy_forms_tags %}
 
-<form action="" method="post">
+{% block content %}
+<form method="post">
   {% csrf_token %}
-
-  <div class="card mx-auto" style="width: 30rem;">
+  <div class="card mx-auto" id="cardi">
     <div class="card-body">
-      <h5 class="card-title">Ingrese sus Credenciales</h5>
+      <h5 class="card-title" id="titlefo">Ingrese sus Credenciales</h5>
       {{ form | crispy }}
       <a href={% url 'home' %} class="card-link">Inicio</a>
       <a href={% url 'register' %} class="card-link">Registrarse</a>
@@ -15,5 +17,4 @@
     </div>
   </div>
 </form>
-
 {% endblock %}

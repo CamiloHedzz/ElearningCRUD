@@ -1,6 +1,6 @@
 from django.db import models
-from localizaciones.models import Localizaciones
 from cargos.models import Cargos
+from localizaciones.models import Localizaciones
 # Create your models here.
 
 
