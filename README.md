@@ -14,3 +14,5 @@ Requisitos para compilacion:
     $ python manage.py runserver : correr el servidor
 
 Autor: Juan Camilo Hernández Ibáñez
+
+![image](https://github.com/CamiloHedzz/ElearningCRUD/assets/111331587/e1a6e7b9-ceea-4182-a956-752b2075ba18)
